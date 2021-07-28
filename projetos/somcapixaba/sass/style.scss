@@ -1,0 +1,1011 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+@import "grids";
+
+@mixin big-desktop {
+	@media (max-width: 1400px) { @content; }
+}
+@mixin desktop {
+	@media (max-width: 1200px) { @content; }
+}
+@mixin tablet-big {
+	@media (max-width: 900px) { @content; }
+}
+@mixin phablet {
+	@media (max-width: 768px) { @content; }
+}
+@mixin phone {
+	@media (max-width: 480px) { @content; }
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	@include span(full);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration: none;
+}
+b{
+	font-weight: 600;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+	0% {
+		letter-spacing: -0.5em;
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes tracking-in-expand {
+	0% {
+		letter-spacing: -0.5em;
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+body{
+	font-family: Montserrat!important;
+	overflow-x: hidden;
+	.wrap_page{
+		width: 100%;
+		margin: auto;
+		display: block;
+		overflow: hidden;
+	}
+	.holder_inicio{
+		@include span(full);
+		height: 200vh;
+		background-color: #000;
+		&:before{
+			content: '';
+			background-image: url(../img/foto_inicio.jpg);
+			background-size:cover;
+			filter: blur(5px);
+			width: 100%;
+			height: 200vh;
+			position: absolute;	
+
+		}
+
+		.topo_inicio { 		
+			height: 100vh;
+			&:before{
+				content: '';
+				background-color: rgba(107, 94, 94, 0.29);
+				width: 100%;
+				height: 100%;
+				position: absolute;			
+			}
+			header { 
+				position: relative;
+				z-index: 1;
+				@include container (1620px);
+				width: 95%;
+				nav { 
+
+					ul { 
+						@include span(full);
+						float: right;
+						margin-top: 43px;
+						.link_inicio { 
+							float: left;
+
+							a { 
+								text-decoration: underline;
+							}
+
+						}
+
+
+
+
+						li { 
+							display: inline-block;
+
+							a { 
+								color: #ffffff;
+								font-family: Montserrat;
+								font-size: 30px;
+								font-weight: 500;
+								transition:all 0.25s ease;
+								@include tablet-big{ 
+									font-size: 27px;
+								}
+								@include phablet{ 
+									font-size: 18px;
+								}
+								@include phone{ 
+									font-size: 12px;
+								}
+
+								&:hover{
+									text-decoration: underline;
+								}
+							}
+						}
+						.direita_lista{
+							float: right;
+							li{
+								margin-left: 40px;
+								white-space: nowrap;
+								@include phablet{ 
+									margin-left: 15px;
+								}
+								@include phone{ 
+									margin-left: 5px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			h1 { 
+				@include container(1345px);
+				width: 80%;
+				color: #ffffff;
+				font-family: Montserrat;
+				font-size: 200px;
+				font-weight: 500;
+				text-transform: uppercase;
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				transform:translateY(-50%) translateX(-50%);
+				line-height: 0.9;
+				@include big-desktop { 
+					font-size: 150px;
+				}
+				@include tablet-big { 
+					font-size: 100px;
+				}
+				@include phablet { 
+					font-size: 70px;
+				}
+				@include phone{ 
+					font-size: 46px;
+				}
+				span { 
+					display: block;
+					text-align: right;
+				}
+			}
+
+			.arrow_inicio { 
+				position: absolute;
+				left: 50%;
+				transform:translateX(-50%);
+				bottom: 70px;
+				z-index: 1;
+				display: block;
+				img { 
+					width: auto;
+					@include phone{ 
+						width: 50%;
+						margin: auto;
+						display: block;
+					}
+
+				}				
+			}
+		}
+		.info_autora { 
+			height: 100vh;
+			min-height: 969px;
+			position: relative;
+			z-index: 1;
+			&:before{
+				content: '';
+				background-color: rgba(43,42,42,0.9);
+				width: 100%;
+				height: 100%;
+				position: absolute;			
+			}
+
+			.holder_info { 
+				@include container(1445px);
+				width: 95%;
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				transform:translateY(-50%) translateX(-50%);
+				.info { 
+					@include span(6 of 12);
+					@include desktop{ 
+						@include span(7 of 12);
+					}
+					@include phablet{ 
+						@include span(full);
+					}
+					p { 
+						color: #ffffff;
+						font-family: Montserrat;
+						font-size: 40px;
+						font-weight: 400;
+						line-height: 1.1;
+						@include big-desktop{ 
+							font-size: 32px;
+						}
+						@include desktop{ 
+							font-size: 32px;
+						}
+						@include tablet-big{ 
+							font-size: 24px;
+						}
+						@include phablet{ 
+							font-size: 20px;
+						}
+						br { 
+
+						}
+					}
+				}
+
+				.info_img { 
+					@include span(5 last of 12);
+					@include phablet{ 
+						@include span(full);
+						max-width: 75%;
+						margin: auto;
+						display: block;
+						float: none;
+					}
+					img { 
+						width: 100%;
+						height: auto;
+					}
+
+					h2 { 
+						color: #ffffff;
+						font-family: Montserrat;
+						font-size: 54px;
+						font-weight: 600;
+						text-align: center;
+						@include big-desktop{ 
+							font-size: 40px;
+						}
+						@include tablet-big{ 
+							font-size: 32px;
+							line-height: 1;
+						}
+					}
+
+					span { 
+						color: #ffffff;
+						font-family: Montserrat;
+						font-size: 28px;
+						font-weight: 400;
+						text-align: center;
+						display: block;
+						line-height: 1;
+						@include tablet-big{ 
+							font-size: 28px;
+						}
+						@include phone{ 
+							font-size: 24px;
+						}
+					}
+				}
+				.texto_menor{ 
+					@include span(full);
+					margin-top: 25px;
+					color: #ffffff;
+					font-family: Montserrat;
+					font-size: 16px;
+					font-weight: 300;
+					line-height: 1;
+					text-align: center;
+					@include phablet{ 
+						margin-top: 45px;
+					}
+					p{
+						@include phone{ 
+							font-size: 24px;
+						}
+					}
+					br { 
+
+					}
+				}
+			}
+		}
+	}//holder_inicio
+	.artista { 
+		@include span(full);
+		margin-top: 75px;
+		.titulo_section { 
+			@include container(1640px);
+			width: 95%;
+			display: block;
+			margin-bottom: 75px;
+			
+			h2 { 
+				color: #2b2a2a;			
+				font-size: 50px;
+				font-weight: 600;
+				margin-bottom: 13px;
+				@include big-desktop { 
+					font-size: 40px;
+				}
+				@include phablet{ 
+					font-size: 30px;
+				}
+				@include phone{ 
+					font-size: 14px;
+				}
+			}
+
+			hr { 
+				background-color: #141414;
+				width: 272px;
+				height: 1px;
+				color: #141414;
+				float: left;
+			}
+		}
+
+		.carrosel_hold { 
+			@include container(1365px);
+			width: 80%;
+			.carousel-indicators{
+				margin-bottom: 0px;
+				bottom: -65px;
+				li{
+					width: 35px;
+					height: 35px;
+					border-radius: 50%;
+					background-color: #2b2a2a;
+				}
+			}
+			.carousel-inner { 
+
+				.carousel-item { 
+
+					.d-block { 
+
+					}
+				}
+			}
+
+			.carousel-control-prev { 
+				left: -12%;
+				width: 10%;
+				.carousel-control-prev-icon { 
+					background-image:url('../img/seta_moldura.png');
+					width: 78px;
+					height: 122px;	
+				}
+
+				.sr-only { 
+
+				}
+			}
+
+			.carousel-control-next { 
+				right: -12%;
+				width: 10%;
+				.carousel-control-next-icon { 
+					background-image:url('../img/seta_moldura.png');
+					width: 78px;
+					height: 122px;	
+					transform:rotate(180deg);
+				}
+
+				.sr-only { 
+
+				}
+			}
+		}
+		
+		.texto_artista { 
+			@include container(1640px);
+			width: 95%;
+			padding: 85px 0px;
+			p { 
+				color: #2b2a2a;
+				font-family: Montserrat;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 1.3;
+				clear: both;
+				@include tablet-big{ 
+					font-size: 24px;
+				}
+
+				@include phone{ 
+					font-size: 18px;
+				}
+				br { 
+
+				}
+			}
+			img.gabriela_cantando{
+				width: auto;
+				max-width: 100%;
+				height: auto;
+				float: right;
+				margin-left: 45px;
+				@include phone{ 
+					margin-left: 0px;
+					margin-bottom: 20px;
+				}
+			}
+			span.titulo_meio{
+
+				color: #2b2a2a;
+				font-family: Montserrat;
+				font-size: 90px;
+				font-weight: 700;
+				font-size: 50px;
+				@include tablet-big{ 
+					font-size: 40px;
+				}
+				@include phablet { 
+					font-size: 30px;
+				}
+				@include phone{ 
+					font-size: 14px;
+				}
+			}
+		}
+
+		.carrosel_full { 
+
+			.carousel-indicators{
+				margin-bottom: 0px;
+				bottom: -65px;
+				li{
+					width: 35px;
+					height: 35px;
+					border-radius: 50%;
+					background-color: #2b2a2a;
+				}
+			}
+			.carousel-inner { 
+
+				.carousel-item { 
+
+					.d-block { 
+
+					}
+				}
+			}
+
+			.carousel-control-prev { 
+				
+				width: 10%;
+				.carousel-control-prev-icon { 
+					background-image:url('../img/seta.png');
+					width: 74px;
+					height: 118px;	
+				}
+
+				.sr-only { 
+
+				}
+			}
+
+			.carousel-control-next { 
+
+				width: 10%;
+				.carousel-control-next-icon { 
+					background-image:url('../img/seta.png');
+					width: 74px;
+					height: 118px;	
+					transform:rotate(180deg);
+				}
+
+				.sr-only { 
+
+				}
+			}
+		}
+
+		.texto_foto_esquerda_artista { 
+			@include span(full);
+			position: relative;
+			overflow: hidden;
+			.foto_esquerda { 
+				width: 57%;
+				float: left;
+				left: 0px;
+				background-image: url(../img/gabriela_pabblo.png);
+				background-size: cover;
+				background-position: center;
+				height: 100%;
+				position: absolute;
+				font-size: 0px;
+				@include phone{ 
+					width: 100%;
+					width: 300px;
+					position: relative;
+				}
+			}
+
+			.holder_texto_artista { 
+				width: 43%;
+				float: right;
+				padding: 85px 0px;
+				@include phone{ 
+					width: 100%;
+				}				
+				p { 
+					color: #2b2a2a;
+					max-width: 828px;
+					width: 95%;
+					font-family: Montserrat;
+					line-height: 1.3;
+					font-size: 28px;
+					font-weight: 400;
+					margin: auto;
+					display: block;
+					@include tablet-big{ 
+						font-size: 24px;
+					}
+					@include phone{ 
+						font-size: 18px;
+					}
+					br { 
+
+					}
+				}
+			}
+		}
+
+		.texto_foto_direita_artista { 		
+			@include span(full);
+			position: relative;
+			overflow: hidden;
+			.holder_texto_artista { 
+				width: 57%;
+				float: left;
+				padding: 85px 0px;	
+				@include phone{ 
+					width: 100%;					
+					position: relative;
+				}
+				p { 
+					display: block;
+					margin: auto;
+					max-width: 828px;
+					width: 95%;
+					color: #2b2a2a;
+					font-family: Montserrat;
+					line-height: 1.3;
+					font-size: 28px;
+					font-weight: 400;
+					@include tablet-big{ 
+						font-size: 24px;
+					}
+					@include phone{ 
+						font-size: 18px;
+					}
+					br { 
+
+					}
+				}
+			}
+			.foto_direita { 
+				width: 43%;
+				right: 0px;
+				background-image: url(../img/gabriela_show.png);
+				background-size: cover;
+				background-position: center;
+				height: 100%;
+				position: absolute;
+				font-size: 0px;
+				@include phone{ 
+					width: 100%;
+					width: 300px;
+					position: relative;
+				}
+
+			}
+
+		}
+
+		.foto_elenao { 
+			margin-top: 90px;
+		}
+
+		h1 { 
+
+		}
+	}//end of artista.gabriela_brown
+	.artista.andre_prando { 
+
+		.titulo_section { 
+
+			h2 { 
+
+			}
+
+			hr { 
+
+			}
+		}
+
+		.black { 
+
+			.carousel-indicators { 
+
+				.active { 
+
+				}
+
+				li { 
+
+				}
+			}
+
+			.carousel-inner { 
+
+				.carousel-item { 
+
+					.d-block { 
+
+					}
+				}
+			}
+
+			.carousel-control-prev { 
+
+				.carousel-control-prev-icon { 
+					background-image:url('../img/seta_black.png');
+
+				}
+
+				.sr-only { 
+
+				}
+			}
+
+			.carousel-control-next { 
+
+				.carousel-control-next-icon {
+					background-image:url('../img/seta_black.png'); 
+
+				}
+
+				.sr-only { 
+
+				}
+			}
+		}
+
+		.texto_artista { 
+
+			p { 
+
+				br { 
+
+				}
+			}
+			.titulo_section{
+				width: 100%;
+				margin-top: 70px;
+				@include phablet{ 
+					margin-top: 30px;
+					margin-bottom: 30px;
+				}
+			}
+			.andre_praia{
+				margin-bottom: 85px;
+				@include phablet{ 
+					margin-bottom: 45px;
+				}
+			}
+		}
+
+		.foto_circular_esquerda { 
+			@include container(1640px);
+			width: 95%;
+			margin-bottom: 80;
+			.circular { 
+				@include span(6 of 12);
+			}
+
+			.texto_holder { 
+				@include span(6 last of 12);
+				h3 { 
+					color: #2b2a2a;
+					font-family: Montserrat;
+					font-size: 50px;
+					font-weight: 600;
+					@include big-desktop { 
+						font-size: 40px;
+					}
+					@include tablet-big{ 
+						font-size: 30px;
+					}
+					@include phablet{ 
+						font-size: 20px;
+					}
+					@include phone{ 
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		.foto_andre { 
+			width: 95%;
+			clear: both;
+			margin-bottom: 80px;
+			&.fl{
+
+				float: left;
+			}
+			&.fr{
+				float: right;
+			}
+		}
+
+		.foto_andre_full { 
+
+		}
+
+		h1 { 
+
+		}
+
+		.foto_circular_direita { 
+			@include container(1640px);
+			width: 95%;
+			position: relative;
+			margin-bottom: 80px;
+			.texto_holder { 
+				@include span(6 of 12);
+				position: absolute;
+				height: 100%;
+				h3 { 
+					color: #2b2a2a;
+					font-family: Montserrat;
+					font-size: 50px;
+					font-weight: 600;
+					position: absolute;
+					top: 50%;
+					transform:translateY(-50%);
+					@include big-desktop { 
+						font-size: 40px;
+					}
+					@include tablet-big{ 
+						font-size: 30px;
+					}
+					@include phablet{ 
+						font-size: 20px;
+					}
+					@include phone{ 
+						font-size: 14px;
+					}
+				}
+			}
+
+			.circular { 
+				@include span(6 last of 12);
+
+			}
+		}
+	}
+	.galeria { 
+		@include span(full);
+		overflow: hidden;	
+		.holder_galeria { 
+			@include span(full);
+			margin-bottom: 120px;
+			overflow: hidden;
+			@include phone{ 
+				margin-bottom: 50px;
+			}
+			.titulo_center { 
+				color: #2b2a2a;
+				font-family: Montserrat;
+				font-size: 80px;
+				font-weight: 600;
+				text-align: center;
+				margin-bottom: 60px;
+				@include phablet{ 
+					font-size: 40px;
+					margin-bottom: 25px;
+				}
+			}
+
+			.titulo_section { 
+				@include container(1640px);
+				width: 95%;
+				display: block;
+				margin-bottom: 75px;
+				@include phablet{ 
+					margin-top: 30px;
+					margin-bottom: 30px;
+				}
+				h2 { 
+					color: #2b2a2a;			
+					font-size: 50px;
+					font-weight: 600;
+					margin-bottom: 13px;
+					@include big-desktop { 
+						font-size: 40px;
+					}
+					@include phablet{ 
+						font-size: 28px;
+					}
+					@include phone{ 
+						font-size: 26px;
+					}
+				}
+
+				hr { 
+					background-color: #141414;
+					width: 272px;
+					height: 1px;
+					color: #141414;
+					float: left;
+				}
+			}
+
+			a { 
+				float: left;
+				width: 25%;
+				height: 366px;
+				overflow: hidden;
+				position: relative;
+				@include tablet-big{ 
+					width: 50%;
+				}
+				@include phone{ 
+					width: 100%;
+					height: 280px;
+				}
+				img {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform:translateY(-50%) translateX(-50%);
+					width: auto;
+					height: 165%; 
+				}
+			}
+		}
+
+		.holder_andre { 
+
+		}
+	}
+}
+.redes_sociais { 
+	@include span(full);
+	background-color: #efefef;
+	padding-top: 57px;
+	padding-bottom: 140px;
+	position: relative;
+	@include tablet-big{ 
+		padding-top: 30px;
+		padding-bottom: 100px;
+	}
+	.holder_redes { 
+		@include container(854px);
+		width: 95%;
+		display: block;
+		.rede { 
+			@include span(3 of 12);
+			@include tablet-big{ 
+				@include span(1 of 4);
+			}
+			&:nth-child(4n){ 
+				margin-right: 0px;
+			}
+			img { 
+				width: 100%;
+				height: auto;
+
+			}
+		}
+	}
+	.arrow_inicio { 
+		position: absolute;
+		width: 98px;
+		height: auto;
+		bottom: 76px;
+		right: 152px;	
+		@include tablet-big{ 
+			bottom: 25px;
+			right: 25px;
+			width: 70px;
+		}	
+		@include phone{ 
+			width: 50px;
+		}
+		img { 
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+/*----------------------- Preloader -----------------------*/
+
+body.preloader-site {
+	overflow: hidden;
+}
+
+.preloader-wrapper {
+	height: 100%;
+	width: 100%;
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 120px;
+}
