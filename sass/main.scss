@@ -1,0 +1,1417 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "grids";
+@import "breakpoint";
+@mixin box-sizing($value) {
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@font-face {
+    font-family: 'manoleteregular';
+    src: url('../fonts/manolete-webfont.eot');
+    src: url('../fonts/manolete-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/manolete-webfont.woff2') format('woff2'), url('../fonts/manolete-webfont.woff') format('woff'), url('../fonts/manolete-webfont.ttf') format('truetype'), url('../fonts/manolete-webfont.svg#manoleteregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "icones";
+@import "variaveis";
+@import "plugins";
+html {}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+.wrap_page {
+    position: relative;
+    right: 0px;
+    -webkit-transition: all .65s ease;
+    -moz-transition: all .65s ease;
+    -ms-transition: all .65s ease;
+    -o-transition: all .65s ease;
+    transition: all .65s ease;
+    &.ativo {}
+}
+
+.wrap_page {
+    &.presentes {
+        .wrap_lojas {
+            @include span(12 of 12);
+            text-align: center;
+            h2 {
+                margin-top: 100px;
+                @include breakpoint($tablet) {
+                    margin-top: 50px;
+                }
+            }
+            p {
+                margin-top: 20px;
+                margin-bottom: 75px;
+                font-size: 18px;
+                @include breakpoint($tablet) {
+                    margin-bottom: 50px;
+                }
+            }
+            .lojas {
+                @include container(1157px);
+                .loja {
+                    @include span(1 of 3);
+                    margin-bottom: 100px;
+                    position: relative;
+                    @include breakpoint($tablet) {
+                        width: 100%;
+                        display: block;
+                        overflow: hidden;
+                        margin: auto;
+                        float: none;
+                        max-width: 200px;
+                        margin-bottom: 30px;
+                    }
+                    img {
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        @include breakpoint($tablet) {
+                            top: 0;
+                            transform: translateY(0);
+                        }
+                    }
+                    &:nth-child(3n) {
+                        margin-right: 0px;
+                        @include breakpoint($tablet) {
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .wrap_loja {
+            @include span(12 of 12);
+            text-align: center;
+            background: #f9f6f6;
+            h2 {
+                margin-top: 100px;
+                @include breakpoint($tablet) {
+                    margin-top: 50px;
+                }
+            }
+            p {
+                margin: auto;
+                margin-top: 20px;
+                margin-bottom: 80px;
+                max-width: 970px;
+                font-size: 18px;
+                @include breakpoint($tablet) {
+                    margin-bottom: 35px;
+                }
+            }
+            .presentes {
+                @include container(1200px);
+                margin-bottom: 80px;
+                @include breakpoint($tablet) {
+                    width: 95%;
+                    margin-bottom: 30px;
+                }
+                .presente {
+                    @include span(3 of 12);
+                    background: #FFF;
+                    margin-bottom: 20px;
+                    border: 1px solid #f9f6f6;
+                    @include breakpoint($tablet) {
+                        @include span(6 of 12);
+                    }
+                    .info-produto {
+                        padding: 15px 15px 0px 15px;
+                        display: block;
+                        overflow: hidden;
+                        @include breakpoint($tablet) {
+                            padding: 10px 10px 0px 10px;
+                        }
+                        img {}
+                        p {
+                            color: #2a1d3e;
+                            font-size: 16px;
+                            font-weight: 300;
+                            text-transform: uppercase;
+                            text-align: center;
+                            margin-bottom: 20px;
+                            font-style: normal;
+                            @include breakpoint($tablet) {
+                                font-size: 12px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .preco {
+                            color: #51398b;
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            text-align: center;
+                            margin-bottom: 27px;
+                            display: block;
+                            @include breakpoint($tablet) {
+                                font-size: 14px;
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                    button {
+                        background-color: #e2e0e8;
+                        height: 60px;
+                        line-height: 60px;
+                        color: white;
+                        font-size: 15px;
+                        font-weight: 400;
+                        text-align: center;
+                        border: none;
+                        width: 100%;
+                        letter-spacing: 1.2px;
+                        cursor: pointer;
+                        @include transition-property(all);
+                        @include transition-duration(.25s);
+                        @include transition-timing-function(ease);
+                        @include breakpoint($tablet) {
+                            font-size: 12px;
+                            line-height: 40px;
+                            height: 40px;
+                            background-color: #cc6d74;
+                        }
+                    }
+                    &:nth-child(2n) {
+                        @include breakpoint($tablet) {
+                            margin-right: 0px;
+                        }
+                    }
+                    &:nth-child(4n) {
+                        margin-right: 0px;
+                    }
+                    &:hover {
+                        border: 1px solid #cc6d74;
+                        button {
+                            background-color: #cc6d74;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wrap_lojas {
+        h2 {}
+        p {}
+        .lojas {
+            .loja {
+                img {}
+            }
+        }
+    }
+    .wrap_loja {
+        h2 {}
+        p {}
+        .presentes {
+            .presente {
+                img {}
+                p {}
+                .presente {}
+                button {}
+            }
+        }
+    }
+}
+
+.wrap_page {
+    &.recomendacoes {
+        @include span(12 of 12);
+        .wrap_recomendacoes {
+            @include container(1407px);
+            @include breakpoint($tablet) {
+                width: 95%;
+                margin-top: 50px;
+            }
+            .info {
+                @include span(3 of 12);
+                margin-top: 55px;
+                margin-bottom: 60px;
+                @include breakpoint($tablet) {
+                    @include span(6 of 12);
+                    margin-top: 0;
+                    margin-bottom: 40px;
+                }
+                a {
+                    position: relative;
+                    .hover {
+                        position: relative;
+                        display: block;
+                        img {
+                            opacity: 1;
+                            -webkit-transition: all .25s ease;
+                            -moz-transition: all .25s ease;
+                            -ms-transition: all .25s ease;
+                            -o-transition: all .25s ease;
+                            transition: all .25s ease;
+                            @include breakpoint($tablet) {
+                                opacity: 0;
+                            }
+                        }
+                        .hover-img {
+                            opacity: 0;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            -webkit-transition: all .25s ease;
+                            -moz-transition: all .25s ease;
+                            -ms-transition: all .25s ease;
+                            -o-transition: all .25s ease;
+                            transition: all .25s ease;
+                            @include breakpoint($tablet) {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .hover {
+                            img {
+                                opacity: 0;
+                            }
+                            .hover-img {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+                &.hospedagem {
+                    img {}
+                    h3 {}
+                    p {}
+                }
+                &.transporte {
+                    img {}
+                    h3 {}
+                    p {}
+                }
+                &.salao {
+                    img {}
+                    h3 {}
+                    p {}
+                }
+                &.dicas {
+                    img {}
+                    h3 {}
+                    p {}
+                }
+                img {
+                    width: 150px;
+                    margin: auto;
+                    display: block;
+                    margin-bottom: 45px;
+                    @include breakpoint($tablet) {
+                        width: 100px;
+                        margin-bottom: 25px;
+                    }
+                }
+                h3 {
+                    color: #363636;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 11px;
+                    text-transform: uppercase;
+                    margin-bottom: 22px;
+                    text-align: center;
+                    @include breakpoint($tablet) {
+                        font-size: 18px;
+                        line-height: 18px;
+                        margin-bottom: 0px;
+                    }
+                }
+                p {
+                    color: #5b5b5b;
+                    font-size: 20px;
+                    font-weight: 300;
+                    text-align: center;
+                    @include breakpoint($tablet) {
+                        display: none;
+                    }
+                }
+                &:nth-child(2n) {
+                    @include breakpoint($tablet) {
+                        margin-right: 0px;
+                    }
+                }
+                &:nth-child(4n) {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+    .wrap_recomendacoes {
+        .info {
+            &.hospedagem {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.transporte {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.salao {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.dicas {
+                img {}
+                h3 {}
+                p {}
+            }
+            img {}
+            h3 {}
+            p {}
+        }
+    }
+}
+
+.wrap_hospedagem {
+    background: #f9f6f6;
+    text-align: center;
+    @include span(12 of 12);
+    h2 {
+        margin-top: 100px;
+        @include breakpoint($tablet) {
+            margin-top: 50px;
+        }
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 65px;
+        @include breakpoint($tablet) {
+            margin-bottom: 35px;
+        }
+    }
+    .hospedagens {
+        @include container(1600px);
+        width: 95%;
+        @include breakpoint($tablet) {
+            margin-bottom: 30px;
+        }
+        .hospedagem {
+            @include span(3 of 12);
+            background-color: white;
+            margin-bottom: 100px;
+            @include breakpoint($tablet) {
+                @include span(12 of 12);
+                margin-bottom: 20px;
+            }
+            .gradiente {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                p {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    position: absolute;
+                    width: 95%;
+                    text-align: center;
+                    font-style: normal;
+                    margin: auto;
+                    display: block;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                img {}
+            }
+            .numero {
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 40px;
+                margin-bottom: 15px;
+            }
+            .endereco {
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                padding: 0 10%;
+                margin-bottom: 0px;
+            }
+            .site {
+                color: #c45a6d;
+                font-size: 18px;
+                font-weight: 700;
+                font-style: italic;
+                margin-top: 25px;
+                margin-bottom: 40px;
+                display: block;
+                @include breakpoint($monitor) {
+                    font-size: 13px;
+                }
+            }
+            &:nth-child(4n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.wrap_transporte {
+    @include span(12 of 12);
+    text-align: center;
+    background: #FFF;
+    h2 {
+        margin-top: 100px;
+        @include breakpoint($tablet) {
+            margin-top: 50px;
+        }
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 65px;
+        @include breakpoint($tablet) {
+            margin-bottom: 35px;
+        }
+    }
+    .transporte {
+        @include container(1093px);
+        @include breakpoint($tablet) {
+            width: 95%;
+            margin-bottom: 20px;
+        }
+        .holder_transporte {
+            @include span(4 of 12);
+            border-right: 1px solid #533a8b;
+            margin-bottom: 100px;
+            @include breakpoint($tablet) {
+                @include span(12 of 12);
+                border-right: 0px;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 30px;
+                color: #533a8b;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-style: normal;
+                span {
+                    display: block;
+                    color: #5b5b5b;
+                    font-weight: 400;
+                }
+            }
+            &:nth-child(3n) {
+                margin-right: 0px;
+                border-right: 0px;
+            }
+        }
+    }
+}
+
+.wrap_salao {
+    @include span(12 of 12);
+    text-align: center;
+    background: #f9f6f6;
+    h2 {
+        margin-top: 100px;
+        @include breakpoint($tablet) {
+            margin-top: 50px;
+        }
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 65px;
+        @include breakpoint($tablet) {
+            margin-bottom: 35px;
+        }
+    }
+    .holder_salao {
+        @include container(1200px);
+        @include breakpoint($tablet) {
+            width: 95%;
+            margin-bottom: 50px;
+        }
+        .salao {
+            @include span(4 of 12);
+            background-color: white;
+            margin-bottom: 100px;
+            @include breakpoint($tablet) {
+                @include span(12 of 12);
+                margin-bottom: 20px;
+            }
+            .nome-salao {
+                @include span(12 of 12);
+                height: 100px;
+                background-color: #cc6d74;
+                p {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    line-height: 100px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+            .numero {
+                @include span(12 of 12);
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 40px;
+                margin-bottom: 15px;
+            }
+            .endereco {
+                float: left;
+                margin-bottom: 0px;
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                padding: 0 17%;
+                margin-bottom: 0px;
+            }
+            .site {
+                @include span(12 of 12);
+                color: #c45a6d;
+                font-size: 16px;
+                font-weight: 700;
+                font-style: italic;
+                margin-top: 25px;
+                margin-bottom: 40px;
+                display: block;
+            }
+            &:nth-child(3n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.wrap_dicas {
+    @include span(12 of 12);
+    text-align: center;
+    background: #5a378f;
+    h2 {
+        margin-top: 100px;
+        color: white;
+        @include breakpoint($tablet) {
+            margin-top: 50px;
+        }
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 65px;
+        color: white;
+        @include breakpoint($tablet) {
+            margin-bottom: 35px;
+        }
+    }
+    .holder_dicas {
+        @include container(1600px);
+        display: block;
+        width: 95%;
+        @include breakpoint($tablet) {}
+        .dicas {
+            @include span(3 of 12);
+            background-color: white;
+            min-height: 260px;
+            margin-bottom: 100px;
+            @include breakpoint($tablet) {
+                @include span(12 of 12);
+                margin-bottom: 10px;
+            }
+            span {
+                color: #cc6d74;
+                font-size: 18px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: 60px;
+                margin-bottom: 40px;
+                display: block;
+                height: 18px;
+            }
+            p {
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 0px;
+                margin-bottom: 40px;
+                padding: 0px 30px;
+            }
+            &:nth-child(4n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.clearfix {}
+
+footer {
+    .logo {
+        img {}
+    }
+}
+
+.headline {
+    width: 100%;
+    height: 100px;
+    background-color: #e66d75;
+    padding-top: 40px;
+    bottom: 0px;
+    position: absolute;
+    text-align: center;
+    @include breakpoint($tablet) {
+        padding-top: 25px;
+    }
+    p {
+        text-align: center;
+        color: #f8f6f6;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        font-style: normal;
+        text-transform: uppercase;
+        display: inline-block;
+        &:before {
+            content: '';
+            background: url('../img/x.png')center center;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 25px;
+            float: left;
+            margin-right: 55px;
+        }
+        &:after {
+            content: '';
+            background: url('../img/x.png')center center;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 25px;
+            float: right;
+            margin-left: 55px;
+        }
+        @include breakpoint($tablet) {
+            font-size: 16px;
+        }
+    }
+}
+
+.invite {
+    width: 100%;
+    background: url('../img/setinha.png') no-repeat center top;
+    padding-top: 109px;
+    padding-bottom: 50px;
+    background-color: #f9f6f6;
+    text-align: center;
+    @include breakpoint($tablet) {
+        padding-top: 50px;
+    }
+    .titulo_desktop {
+        @include breakpoint($tablet) {
+            display: none;
+        }
+    }
+    h2 {
+        @include breakpoint($tablet) {}
+    }
+    h1 {
+        color: #202020;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 51px;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    p {
+        display: block;
+        color: #202020;
+        font-size: 18px;
+        font-weight: 300;
+        font-style: italic;
+        text-align: center;
+        max-width: 835px;
+        margin: 0 auto;
+        line-height: 21.5px;
+        margin-top: 15px;
+        @include breakpoint($tablet) {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 275px;
+        }
+    }
+    form {
+        overflow: hidden;
+        max-width: 1194px;
+        margin: 50px auto 0 auto;
+        width: 95%;
+        input[type=text] {
+            width: (588/1194)*100%;
+            height: 60px;
+            background-color: white;
+            border: none;
+            padding-left: 20px;
+            @include breakpoint($tablet) {
+                width: 100%;
+            }
+        }
+        .algo {
+            @include breakpoint($tablet) {
+                height: 100px;
+            }
+        }
+        .couple {
+            overflow: hidden;
+            width: 390px;
+            margin: 0 auto;
+            input {
+                color: white;
+                font-family: Lato;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 13px;
+                width: (186/390)*100%;
+                height: 60px;
+                border: none;
+                @include transition-property(all);
+                @include transition-duration(.25s);
+                @include transition-timing-function(ease);
+            }
+            input.fl {
+                background-color: #aad3c1;
+                &:hover {
+                    background-color: #00c69e;
+                }
+            }
+            input.fr {
+                background-color: #cc6d74;
+                &:hover {
+                    background-color: #de3e48;
+                }
+            }
+        }
+        .couple {
+            &.mobile {
+                width: 100%;
+                input.fl {
+                    background-color: #00c69e;
+                    margin-bottom: 30px;
+                }
+                input.fr {
+                    background-color: #de3e48;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        a {
+            text-align: center;
+            color: #202020;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            line-height: 17px;
+            text-decoration: underline;
+            display: block;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+    }
+}
+
+.suggest,
+.gift {
+    width: 100%;
+    padding: 90px 0px;
+    text-align: center;
+    @include breakpoint($tablet) {
+        padding-top: 50px;
+        padding-bottom: 35px;
+    }
+    h2 {
+        @include breakpoint($tablet) {
+            font-size: 24px;
+        }
+    }
+    p {
+        color: #202020;
+        font-family: Lato;
+        font-size: 24px;
+        font-weight: 300;
+        font-style: italic;
+        text-align: center;
+        line-height: 21.5px;
+        max-width: 835px;
+        margin: 0 auto;
+        @include breakpoint($tablet) {
+            font-size: 18px;
+            line-height: 20px;
+            max-width: 212px;
+        }
+    }
+    .wrap_recomendacoes {
+        @include container(1407px);
+        @include breakpoint($tablet) {
+            width: 95%;
+            margin-top: 50px;
+        }
+        .info {
+            @include span(3 of 12);
+            margin-top: 55px;
+            margin-bottom: 60px;
+            @include breakpoint($tablet) {
+                @include span(6 of 12);
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+            a {
+                position: relative;
+                .hover {
+                    position: relative;
+                    display: block;
+                    img {
+                        opacity: 1;
+                        -webkit-transition: all .25s ease;
+                        -moz-transition: all .25s ease;
+                        -ms-transition: all .25s ease;
+                        -o-transition: all .25s ease;
+                        transition: all .25s ease;
+                        @include breakpoint($tablet) {
+                            opacity: 0;
+                        }
+                    }
+                    .hover-img {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        -webkit-transition: all .25s ease;
+                        -moz-transition: all .25s ease;
+                        -ms-transition: all .25s ease;
+                        -o-transition: all .25s ease;
+                        transition: all .25s ease;
+                        @include breakpoint($tablet) {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:hover {
+                    .hover {
+                        img {
+                            opacity: 0;
+                        }
+                        .hover-img {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &.hospedagem {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.transporte {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.salao {
+                img {}
+                h3 {}
+                p {}
+            }
+            &.dicas {
+                img {}
+                h3 {}
+                p {}
+            }
+            img {
+                width: 150px;
+                margin: auto;
+                display: block;
+                margin-bottom: 45px;
+                @include breakpoint($tablet) {
+                    width: 100px;
+                    margin-bottom: 25px;
+                }
+            }
+            h3 {
+                color: #363636;
+                font-size: 24px;
+                font-weight: 300;
+                text-transform: uppercase;
+                margin-bottom: 22px;
+                text-align: center;
+                line-height: 26px;
+                @include breakpoint($tablet) {
+                    font-size: 18px;
+                    line-height: 18px;
+                    margin-bottom: 0px;
+                }
+            }
+            p {
+                color: #5b5b5b;
+                font-size: 20px;
+                font-weight: 300;
+                text-align: center;
+                @include breakpoint($tablet) {
+                    display: none;
+                }
+            }
+            &:nth-child(2n) {
+                @include breakpoint($tablet) {
+                    margin-right: 0px;
+                }
+            }
+            &:nth-child(4n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.store {
+    width: 100%;
+    height: 220px;
+    background: url('../img/lojabg.png') center;
+    padding-top: 76px;
+    background-size: 100%;
+    text-align: center;
+    @include breakpoint($tablet) {
+        padding-top: 30px;
+        background-size: auto;
+    }
+    h1 {
+        color: white;
+        font-size: 26px;
+        font-weight: 300;
+        text-transform: uppercase;
+        max-width: 705px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 33px;
+        @include breakpoint($tablet) {
+            font-size: 20px;
+            width: 95%;
+        }
+    }
+    a {
+        display: block;
+        width: 390px;
+        height: 60px;
+        background-color: #c8626d;
+        margin: 0 auto;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+        padding-top: 23px;
+        margin-top: 30px;
+        @include breakpoint($tablet) {
+            width: 95%;
+        }
+    }
+}
+
+.gift {
+    padding-bottom: 0px;
+    p {
+        @include breakpoint($tablet) {
+            margin-bottom: 50px;
+        }
+    }
+    .lojas {
+        @include container(1157px);
+        margin-top: 100px;
+        @include breakpoint($tablet) {
+            margin-top: 20px;
+        }
+        .loja {
+            @include span(4 of 12);
+            margin-bottom: 100px;
+            position: relative;
+            @include breakpoint($tablet) {
+                width: 100%;
+                display: block;
+                overflow: hidden;
+                margin: auto;
+                float: none;
+                max-width: 200px;
+                margin-bottom: 30px;
+            }
+            img {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 250px;
+                @include breakpoint($tablet) {
+                    top: 0;
+                    transform: translateY(0);
+                }
+            }
+            &:nth-child(3n) {
+                margin-right: 0px;
+                @include breakpoint($tablet) {
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+    ul {
+        max-width: 1009px;
+        li {
+            margin-right: (180/1009)*100%;
+        }
+    }
+}
+
+.gift.sound {
+    background: url('../img/soundcloud.png') center;
+    text-align: center;
+    h1 {
+        color: #FFFFFF;
+        font-family: 'manoleteregular';
+        font-size: 70px;
+        font-weight: 400;
+        line-height: 61px;
+    }
+    p {
+        color: white;
+        font-size: 24px;
+        font-weight: 300;
+        font-style: italic;
+        display: block;
+        margin-top: 30px;
+    }
+    p {
+        max-width: 932px;
+    }
+    ul {
+        max-width: 100%;
+        li {
+            margin-right: (15/1196)*100%;
+            max-width: 388px;
+            display: inline-block;
+            @include breakpoint($tablet) {
+                margin-bottom: 10px;
+                margin: auto;
+            }
+            &:last-child {
+                margin-right: 0;
+                @include breakpoint($tablet) {
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.map {
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+    @include breakpoint($tablet) {
+        padding-top: 50px;
+    }
+    h1 {}
+    p {
+        color: #202020;
+        font-size: 24px;
+        font-weight: 300;
+        font-style: italic;
+        max-width: 834px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 30px;
+        margin-top: 20px;
+        @include breakpoint($tablet) {
+            font-size: 18px;
+        }
+    }
+    #side-container {
+        max-width: 993px;
+        width: 95%;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-top: 50px;
+        height: 60px;
+        margin-bottom: 95px;
+        @include breakpoint($tablet) {
+            margin-top: 35px;
+            margin-bottom: 30px;
+            height: auto;
+        }
+        ul {
+            width: (692/993)*100%;
+            height: 60px;
+            @include breakpoint($tablet) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            input {
+                background-color: #e8e8e8;
+                color: #202020;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-family: Lato;
+                border: none;
+                height: 60px;
+                padding-left: 20px;
+            }
+        }
+        div.fr {
+            width: (285/993)*100%;
+            height: 60px;
+            @include breakpoint($tablet) {
+                width: 100%;
+            }
+            input {
+                background-color: #c8626d;
+                border: none;
+                color: white;
+                font-family: Lato;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 13px;
+                text-transform: uppercase;
+                height: 60px;
+            }
+        }
+    }
+    #map_canvas {
+        height: 500px;
+        @include breakpoint($tablet) {
+            height: 300px;
+        }
+    }
+}
+
+.invite.contato {
+    background: #f9f6f6;
+    p {
+        max-width: 839px;
+    }
+    form {
+        max-width: 995px;
+        .couple {
+            width: 100%;
+            textarea {
+                width: 100%;
+                height: 60px;
+                background-color: white;
+                overflow: hidden;
+                border: none;
+                padding: 23px 10px 17px 20px;
+                resize: none;
+                letter-spacing: 1px;
+            }
+        }
+        input {
+            letter-spacing: 1px;
+        }
+        input.send {
+            width: 389px;
+            height: 60px;
+            background-color: #c8626d;
+            color: white;
+            font-family: Lato;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 13px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 auto;
+            border: none;
+            display: block;
+            @include breakpoint($tablet) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.inicial {
+    header {
+        height: 100vh;
+        overflow: hidden;
+        padding: 0!important;
+        box-shadow: none;
+        .botao_responsivo {
+            position: absolute;
+            top: 0;
+            right: 30px;
+        }
+        .wrap_header {
+            .logo {
+                width: (500/1200)*100%;
+                margin: 0 auto;
+                margin-top: 5vh;
+                float: none;
+                @include breakpoint($tablet) {
+                    width: 75%;
+                    margin-top: 10vh;
+                }
+            }
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            line-height: 26px;
+            font-weight: 300;
+            display: block;
+            text-transform: inherit;
+            max-width: 790px;
+            margin: auto;
+            margin-top: 2vh;
+            @include breakpoint($tablet) {
+                font-size: 20px;
+            }
+        }
+        .menu {
+            width: 100%;
+            overflow: hidden;
+            margin: 101px auto 0 auto;
+            ul {
+                width: 80%;
+            }
+            ul li {
+                float: left;
+                margin-left: (48/851)*100%;
+                @include breakpoint($wide) {
+                    margin-left: 25px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                a {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 11px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+.gift {
+    &.sound {
+        h1 {}
+        p {
+            margin-bottom: 65px;
+        }
+        .wrap_djs {
+            .dj {
+                img {}
+                .info-dj {
+                    .icone {}
+                    time {}
+                    h2 {}
+                    .genero {}
+                }
+            }
+        }
+    }
+    &.desktop {
+        h1 {}
+        p {}
+        .wrap_djs {
+            .dj {
+                img {}
+                .info-dj {
+                    .icone {}
+                    time {}
+                    h2 {}
+                    .genero {}
+                }
+            }
+        }
+    }
+    h1 {}
+    p {}
+    .wrap_djs {
+        @include container(1200px);
+    
+        .dj {
+            @include span(4 of 12);
+            margin-bottom: 100px;
+                 background-color: white;
+            img {
+                @include span(6 of 12);
+            }
+            .info-dj {
+                @include span(6 last of 12);
+           
+                .icone {
+                    background: url('../img/soundc.png');
+                    width: 54px;
+                    height: 20px;
+                    float: right;
+                    margin-bottom: 12px;
+                    margin-top: 13px;
+                }
+                time {
+                    color: #2a1d3e;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 11px;
+                    text-transform: uppercase;
+                    margin-bottom: 14px;
+                    float: left;
+                    margin-top: 47px;
+                }
+                h3 {
+                    color: #2a1d3e;
+                    font-size: 30px;
+                    line-height: 32px;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    margin-bottom: 16px;
+                    float: left;
+                    text-align: left;
+                }
+                .genero {
+                    color: #2a1d3e;
+                    font-size: 16px;
+                    font-weight: 400;
+                    float: left;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                }
+            }
+            &:nth-child(3n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
