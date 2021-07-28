@@ -1,0 +1,146 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
+<link rel="stylesheet" href="css/main.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery.maskedinput-1.3/jquery.maskedinput-1.3.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+<script>
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+</script>
+<script src="js/main.js"></script>
+<script src="js/contato.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/owl-carousel/owl.carousel.min.js"></script>
+<div class="overlay"></div>
+<div class="wrap_page" id="main">
+    <header>
+    <nav>
+     <div class="layout">
+       <a href="inicial.html" class="logo"><img src="img/logo.png" height="119" width="130" alt="logo"></a>
+       <div class="holder_telefone monitor">
+         <img src="img/telefone-normal.png" height="26" width="26" alt="icone telefone desktop">
+         <p class="desktop">Faça sua reserva <br>
+          <span>(27) <b>3248 2143</b></span></p>
+        </div>
+        <ul class="monitor">
+          <li><a href="inicial.html">INICIAL</a></li>
+          <li><a href="a-pousada.html">A POUSADA</a></li>
+          <li><a href="acomodacoes.html">AS ACOMODAÇÕES</a></li>
+          <li><a href="cafe-da-manha.html">CAFÉ DA MANHÃ</a></li>
+          <li><a href="conheca.html">CONHEÇA PEDRA AZUL</a></li>
+          <li><a href="como-chegar.html">COMO CHEGAR</a></li>
+          <li><a class="atual" href="contato.html">CONTATO</a></li>
+        </ul>
+        <a class="botao_responsivo tablet"></a>
+        <a href="tel:+552732482143" class="telefone tablet"></a>
+      </div>
+    </nav>
+ </header>
+    <div class="menu-off-canvas tablet">
+        <nav class="menu">
+          <ul>
+            <li class="menu"><a href="inicial.html" class="inicial">INICIAL</a></li>
+            <li class="menu"><a href="a-pousada.html" class="pousada">A POUSADA</a></li>
+            <li class="menu"><a href="acomodacoes.html" class="acomodacoes">AS ACOMODAÇÕES</a></li>
+            <li class="menu"><a href="cafe-da-manha.html" class="cafe-da-manha">CAFÉ DA MANHÃ</a></li>
+            <li class="menu"><a href="conheca.html" class="conheca">CONHEÇA PEDRA AZUL</a></li>
+            <li class="menu"><a href="como-chegar.html" class="como-chegar">COMO CHEGAR</a></li>
+            <li class="menu"><a href="contato.html" class="contato">CONTATO</a></li>
+          </ul>
+        </nav>
+      </div>
+    <div class="bg_titulo">
+      <div class="layout">
+        <h2>CONTATO</h2>
+        <p>Vitae a dui quis eget at suspendisse, vehicula ut vulputate, adipiscing vestibulum purus ullamcorper a, pellentesque.</p>
+      </div>
+      <span class="seta_bg">
+        <div class="layout">
+          <a href="inicial.html">página inicial</a>    
+          <p>contato</p>
+        </div>
+      </span>
+    </div>
+    <div class="layout contato">
+      <div class="info_contato">
+        <h2>DADOS PARA CONTATO</h2>
+        <hr>
+        <p class="endereco">
+          Rota do Lagarto, Km 07, Pedra Azul Aracê, Domingos Martins, ES CEP: 29278-000
+        </p>
+        <p class="numero">
+          (27) 3248-2143  |  (28) 999-999-636
+        </p>
+        <p class="email">
+          contato@pousadavaledamata.com.br
+        </p>
+      </div>
+      <div class="info_form">
+        <h2>ENTRE EM CONTATO CONOSCO</h2>
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, accumsan urna in, porttitor euismod porttitor vestibulum turpis, sed malesuada quisque duis mi. Elementum nam magnis enim tortor, phasellus consequat tristique erat mi fusce aliquam, ligula velit malesuada vitae volutpat purus.
+        </p>
+        <form name="formContato" id="formContato" action="<?=URL?>actions.php" method="post" enctype="text/plain">
+          <input type="hidden" name="acao" value="enviaEmail">
+          <input type="text" name="strNome" placeholder="Nome completo" class="strNome">
+          <input type="email" name="strEmail" placeholder="E-mail" class="strEmail">
+          <input type="tel" name="numTelefone" id="numTelefone" placeholder="Telefone" class="strTel">
+          <select class="mySelectBoxClass" name="codAssunto" id="codAssunto">
+            <option value="">Assunto</option>
+            <? foreach ($vetAssunto as $assunto) {?>
+            <option value="<?=$assunto['codItem']?>">
+              <?=$assunto[ 'strTitulo']?>
+            </option>
+            <? } ?>
+          </select>
+          <textarea name="strMensagem" placeholder="Mensagem"></textarea>
+          <p>*Todos os campos são obrigatórios</p>
+          <button type="submit" name="enviar" value="ENVIAR MENSAGEM" class="botao_enviar button button--sacnite">
+          ENVIAR MENSAGEM
+          </button>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="layout">
+        <a href="#" class="logo">
+          <img src="img/logo-negativo.png" height="150" width="164" alt="">
+        </a>
+        <div class="wrap_footer">
+          <div class="holder_footer onde_estamos">
+            <h2>ONDE ESTAMOS</h2>
+            <p>Rota do Lagarto, Km 07, Pedra Azul
+              <br>Aracê, Domingos Martins, ES
+              <br>CEP: 29278-000</p>
+            </div>
+            <div class="holder_footer reserva">
+              <h2>FAÇA SUA RESERVA</h2>
+              <p>27 3248-2143
+                <br>28 999-999-636</p>
+              </div>
+              <div class="holder_footer midias">
+                <h2>NOSSAS MÍIDAS</h2>
+                <a href="#" class="facebook">
+                  <img src="img/facebook.png" height="29" width="29" alt="facebook">
+                  <img src="img/facebook-hover.png" height="29" width="29" alt="" class="hover">
+                </a>
+                <a href="#" class="instagram">
+                  <img src="img/instagram.png" height="29" width="29" alt="instagram">
+                   <img src="img/instagram-hover.png" height="29" width="29" alt="instagram" class="hover">
+                </a>
+                <a href="#" class="tripadvisor">
+                   <img src="img/tripadvisor.png" height="29" width="29" alt="tripadvisor">
+                  <img src="img/tripadvisor-hover.png" height="29" width="29" alt="tripadvisor" class="hover">
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
